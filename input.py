@@ -1,0 +1,1 @@
+num_one = input()
