@@ -17,3 +17,5 @@ result = num_one + num_two
 print(result)
 
 #위와 같이 정수형으로 변환해주면 더하기가 정확하게 됨
+
+userName = input("이름 ==> ")
