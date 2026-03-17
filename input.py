@@ -18,6 +18,7 @@ print(result)
 
 #위와 같이 정수형으로 변환해주면 더하기가 정확하게 됨
 
+print("택배를 보내기 위한 정보가 필요합니다.")
 userName = input("이름 ==> ")
 userPhone = input("전화번호 ==> ")
 
