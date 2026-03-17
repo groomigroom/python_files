@@ -21,5 +21,7 @@ print(result)
 print("택배를 보내기 위한 정보가 필요합니다.")
 userName = input("이름 ==> ")
 userPhone = input("전화번호 ==> ")
+weight = int(input("무게(g)는 ==> "))
 
 print("제 이름은 ", userName, "입니다. 연락처는 ", userPhone, "입니다.")
+print("배송비는 ", weight*10, "원입니다.")
