@@ -10,3 +10,10 @@ result = num_one + num_two
 print(result)
 
 #두개의 결과는 두 수 받은거 붙인거로 나옴
+
+num_one = int(input())
+num_two = int(input("숫자 ==> "))
+result = num_one + num_two
+print(result)
+
+#위와 같이 정수형으로 변환해주면 더하기가 정확하게 됨
