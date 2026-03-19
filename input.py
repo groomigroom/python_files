@@ -25,3 +25,10 @@ weight = int(input("무게(g)는 ==> "))
 
 print("제 이름은 ", userName, "입니다. 연락처는 ", userPhone, "입니다.")
 print("배송비는 ", weight*10, "원입니다.")
+
+
+##### 정보처리기사 83쪽
+
+#print(출력값1, 출력값2, ..., sep = 분리문자, end = 종료문자)
+
+print(82, 24, sep = '-', end = ',')
