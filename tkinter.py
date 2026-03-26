@@ -32,3 +32,5 @@ cb1 = Checkbutton(root, text="체크", variable=chk, command=myChec)
 cb1.pack()
 
 root.mainloop()
+
+#place
