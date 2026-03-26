@@ -7,18 +7,49 @@ Original file is located at
     https://colab.research.google.com/drive/1c2Eca4-Qt06KQ0lLiB4jxXlPJR-q0roM
 """
 
-!pip install flask_ngrok
-!pip install pyngrok==4.1.1
+!pip install flask pyngrok
 
 from flask import Flask
-from flask_ngrok import run_with_ngrok
+from pyngrok import ngrok
+
+ngrok.set_auth_token("3BSyK1NpaXY8VMnvcGR9iUzLbU2_5T4HSk3Q3sYSLwLuHDYKo")
 
 app = Flask(__name__)
-run_with_ngrok(app)
 
 @app.route("/")
 def home():
-  return "<h1>김구름 김구름</h1>"
+    return "<h1>김구름 김구름</h1>"
 
-app.run()
+public_url = ngrok.connect(5000)
+print("접속 주소:", public_url)
+
+app.run(host="0.0.0.0", port=5000)
 #https://www.youtube.com/watch?v=0dYsZt8-nXk&list=PLTUSGW0o2A2FgYB43QuL6wxnUM4dUr1n3 6분 44초 autotoken 부터 하기
+#https://dashboard.ngrok.com/get-started/your-authtoken에서 토큰 받기
+
+!pkill ngrok
+!rm -rf /root/.ngrok2 /root/.config/ngrok
+
+!pip install --upgrade pyngrok
+
+from pyngrok import ngrok
+
+ngrok.kill()  # 혹시 실행 중이면 종료
+ngrok.set_auth_token("3BSyK1NpaXY8VMnvcGR9iUzLbU2_5T4HSk3Q3sYSLwLuHDYKo")
+
+# 최신 버전 강제 설치
+ngrok.install_ngrok()
+
+from flask import Flask
+from pyngrok import ngrok
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "<h1>김구름 김구름</h1>"
+
+public_url = ngrok.connect(5000)
+print("접속 주소:", public_url)
+
+app.run(host="0.0.0.0", port=5000)
