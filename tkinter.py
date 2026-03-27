@@ -16,6 +16,7 @@ root = Tk()
 root.title("창 조절 연습")
 root.geometry("500x200")
 root.resizable(width=False, height=False)
+img_one = PhotoImage(file="image_two.png")
 
 label1 = Label(root, text="아아아")
 label1.pack()
@@ -23,6 +24,8 @@ label2 = Label(root, text="열심히 공부하세요", font=("pretendard", 25), 
 label2.pack()
 label3 = Label(root, text="생일축하해요", font=("pretendard", 25), bg="#FFFFFF", fg="#333333", anchor=CENTER)
 label3.place(x=120, y= 150)
+label4 = Label(root, image=img_one)
+label4.place(x=400, y=170)
 
 button1 = Button(root, text="클릭", fg="#333333", command=myFunc)
 button1.pack()
