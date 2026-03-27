@@ -16,7 +16,7 @@ root = Tk()
 root.title("창 조절 연습")
 root.geometry("500x200")
 root.resizable(width=False, height=False)
-img_one = PhotoImage(file="image_two.png")
+img_one = PhotoImage(file="img/image_two.png")
 
 label1 = Label(root, text="아아아")
 label1.pack()
