@@ -1,0 +1,12 @@
+c="김"
+d="구"
+e="름"
+print(c+d+e)
+#김구름
+f=c+d+e
+print(f[1])
+#구
+print(f[-1])
+#름
+print(len(f))
+#3
