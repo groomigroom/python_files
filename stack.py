@@ -43,7 +43,7 @@ stack = [None for _ in range(size)]
 top = -1
 
 if __name__ == "__main__" :
-    select = input("삽입(I) / 추출(E) / 확인(V) / 종료(X) 중 하나 선택하기")
+    select = input("\n삽입(I) / 추출(E) / 확인(V) / 종료(X) 중 하나 선택하기")
 
     while(select.upper() != 'X') :
         if select.upper() == 'I' :
