@@ -1,0 +1,16 @@
+llst = []
+
+while True :
+    i = input("암호 입력하기")
+    if i == "끝" :
+        break
+    llst.append(chr(ord(i) + 100))
+
+
+print(llst)
+
+for idx, val in enumerate(llst) :
+    llst[idx] = chr(ord(val) - 100)
+
+
+print(llst)
