@@ -1,0 +1,41 @@
+주피터 노트북 환경(기본 Jupyter Notebook 또는 JupyterLab)에 따라 설정 방법이 조금 다릅니다. 사용 중인 환경에 맞는 방법을 선택해 보세요. [1] 
+------------------------------
+## 1. JupyterLab을 사용하는 경우 (추천)
+JupyterLab은 마우스 클릭 몇 번으로 간단하게 자동 괄호 닫기 기능을 켤 수 있습니다. [1] 
+
+   1. 상단 메뉴에서 Settings ➡️ Advanced Settings Editor를 클릭합니다.
+   2. 왼쪽 목록에서 Notebook을 선택합니다.
+   3. 우측의 User Preferences 입력창(중괄호 { } 사이)에 아래 코드를 추가합니다.
+   
+   {
+       "codeCellConfig": {
+           "autoClosingBrackets": true
+       }
+   }
+   
+   4. 우측 상단의 Save 아이콘(디스켓 모양)을 눌러 저장합니다. [1] 
+
+------------------------------
+## 2. 구버전 Jupyter Notebook을 사용하는 경우
+구버전 주피터 노트북은 확장 프로그램인 nbextensions의 기능을 활용해야 합니다. [2, 3] 
+
+   1. 주피터 노트북 홈 화면에서 상단 메뉴의 Nbextensions 탭으로 이동합니다. [2, 3] 
+   2. 목록에서 AutoSaveTrack 또는 💡 Auto-closing pairs (간혹 테마나 버전에 따라 Hinterland 등 자동완성 플러그인에 포함되기도 합니다) 항목을 찾습니다. [3] 
+   3. 해당 항목 왼쪽에 있는 체크박스를 활성화해 줍니다.
+   * 만약 Nbextensions 탭이 보이지 않는다면, 터미널(또는 Anaconda Prompt)에서 pip install jupyter_contrib_nbextensions 명령어로 패키지를 먼저 설치하셔야 합니다. [3] 
+   
+------------------------------
+## 3. VS Code에서 주피터 노트북을 쓰는 경우
+VS Code 내부에서 .ipynb 파일을 열어 사용하고 계신다면, VS Code 자체 설정을 변경해야 합니다. [4] 
+
+   1. 단축키 Ctrl + , (Mac은 Cmd + ,)를 눌러 설정(Settings) 창을 엽니다.
+   2. 검색창에 auto closing brackets를 검색합니다.
+   3. Editor: Auto Closing Brackets 설정을 찾아 값을 always로 변경합니다.
+
+------------------------------
+현재 어떤 프로그램(JupyterLab, 기본 Notebook, VS Code 등)을 사용하고 계시는가요? 위 방법으로 해결되지 않거나 설정 중 막히는 부분이 있다면 편하게 말씀해 주세요!
+
+[1] [https://variety82p.tistory.com](https://variety82p.tistory.com/entry/%EC%A5%AC%ED%94%BC%ED%84%B0%EB%9E%A9-%EC%9E%90%EB%8F%99%EC%99%84%EC%84%B1)
+[2] [https://m.blog.naver.com](https://m.blog.naver.com/towards-ai/222182455430)
+[3] [https://www.youtube.com](https://www.youtube.com/watch?v=N_l7rZeAxKs)
+[4] [https://www.youtube.com](https://www.youtube.com/watch?v=1tKPqQmXM98)
