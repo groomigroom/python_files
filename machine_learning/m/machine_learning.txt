@@ -15,5 +15,8 @@ cnn => Convolutional Neural Network
 3×5×5이런식으로
 3은 차원
 
+
+rnn => Recurrent neural network
+
 https://www.youtube.com/watch?v=MnhaKrISSvs&list=PL_iJu012NOxdw1jc3KEo8Mq5oD5SXKhLu
 6분 25초
