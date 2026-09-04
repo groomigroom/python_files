@@ -3,4 +3,6 @@
 딥러닝은 뉴럴네트워크?
 인공신경망
 
+cnn => Convolutional Neural Network
+
 
