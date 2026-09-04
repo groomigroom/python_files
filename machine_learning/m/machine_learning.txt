@@ -11,5 +11,9 @@ cnn => Convolutional Neural Network
 
 컬러 이미지는 rgb로 3차원 행렬
 
+
+3×5×5이런식으로
+3은 차원
+
 https://www.youtube.com/watch?v=MnhaKrISSvs&list=PL_iJu012NOxdw1jc3KEo8Mq5oD5SXKhLu
 6분 25초
