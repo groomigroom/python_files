@@ -11,7 +11,8 @@ tf.Variable()은 값이 언제든 변할 수 있는 변수(Variable) 텐서를 �
 tf.Variable()로 만든 변수는 파이썬의 대입 연산자(=)로 값을 바꿀 수 없습니다. 대신 .assign() 이라는 특수한 메서드를 사용해야 합니다.
 
 import tensorflow as tf
-# 초기값 3.0을 가진 변수 생성구름이 = tf.Variable(3.0)
+# 초기값 3.0을 가진 변수 생성
+구름이 = tf.Variable(3.0)
 print("처음 값:", 구름이.numpy()) # 출력: 3.0
 # 텐서플로 변수 값 변경 (assign 사용)
 구름이.assign(5.0)
