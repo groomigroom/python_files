@@ -6,3 +6,5 @@
 cnn => Convolutional Neural Network
 
 
+https://www.youtube.com/watch?v=MnhaKrISSvs&list=PL_iJu012NOxdw1jc3KEo8Mq5oD5SXKhLu
+6분 25초
