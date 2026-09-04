@@ -1,0 +1,48 @@
+tf.keras.optimizers.Adam()은 텐서플로(TensorFlow)에서 인공지능 모델(딥러닝 모델)의 가중치를 가장 효과적으로 조정하여 오차를 줄여주는 'Adam'이라는 이름의 최적화 알고리즘(Optimizer)을 생성하는 함수입니다. [1, 2] 
+딥러닝의 핵심은 컴퓨터가 정답을 더 잘 맞추도록 수정하는 과정인데, 이 함수가 바로 그 '어떻게 수정할지'에 대한 정밀한 나침반 역할을 합니다.
+------------------------------
+## 1. 구성 요소별 의미
+
+* tf: 파이썬 프로그래밍에서 import tensorflow as tf를 통해 불러온 텐서플로 라이브러리 자체를 의미합니다.
+* .keras: 텐서플로 내부에 내장된 고수준 딥러닝 API인 케라스(Keras) 프레임워크에 접근합니다.
+* .optimizers: 모델의 손실(Loss, 오차)을 최소화하도록 가중치를 업데이트하는 다양한 최적화 알고리즘들이 모여 있는 모듈입니다.
+* .Adam(): 그 알고리즘 중에서도 현재 세계적으로 가장 널리 쓰이는 Adam(Adaptive Moment Estimation) 방식을 사용하겠다는 선언입니다. [1, 2, 3, 4, 5, 6, 7] 
+
+------------------------------
+## 2. Adam 옵티마이저가 특별한 이유
+현업과 학계에서 딥러닝 모델을 만들 때 특별한 이유가 없다면 "일단 Adam부터 쓰고 본다"고 할 만큼 대중적입니다. 두 가지 유명한 알고리즘의 장점을 융합했기 때문입니다.
+
+   1. 방향을 기억하는 성질 (Momentum): 오차를 줄이러 내려가는 과정에서 이전에 이동하던 방향과 속도를 고려해 관성을 가집니다. 덕분에 가짜 최솟값(Local Minimum)에 갇히지 않고 부드럽게 탈출합니다.
+   2. 보폭을 조절하는 성질 (RMSProp): 가중치마다 업데이트되는 빈도나 크기를 보고, 많이 바뀐 가중치는 조심스럽게(적게), 적게 바뀐 가중치는 과감하게(많이) 이동하도록 보폭(학습률)을 스스로 조절합니다.
+
+즉, "가장 똑똑한 방향으로, 가장 적절한 보폭으로 알아서 잘 내려가는 알고리즘"이라고 이해하시면 됩니다.
+------------------------------
+## 3. 실제 코드에서의 활용 예시
+일반적으로 딥러닝 모델의 구조를 다 짠 뒤, 모델을 컴파일(학습 준비)하는 단계에서 지정합니다. [6, 8] 
+
+import tensorflow as tf
+# 1. 모델 구조 정의 (예시)model = tf.keras.Sequential([
+    tf.keras.layers.Dense(10, activation='relu')
+])
+# 2. 모델 컴파일 (Adam 옵티마이저 적용)
+model.compile(
+    optimizer=tf.keras.optimizers.Adam(learning_rate=0.001), # 이곳에 사용됩니다!
+    loss='sparse_categorical_crossentropy',
+    metrics=['accuracy']
+)
+
+
+* 괄호 안의 learning_rate는 학습률(한 번에 이동할 보폭의 크기)을 뜻하는 대표적인 하이퍼파라미터입니다. 적어주지 않으면 기본값(대개 0.001)이 자동으로 들어갑니다. [2, 8] 
+* 가볍게 코드를 짤 때는 문자열로 optimizer='adam'이라고만 적어도 똑같이 동작합니다. 하지만 학습률을 직접 미세하게 조정하고 싶을 때는 위 예시처럼 tf.keras.optimizers.Adam(learning_rate=0.01) 형태로 명시하여 사용합니다. [7] 
+
+------------------------------
+혹시 현재 준비 중이신 데이터의 종류(예: 이미지, 텍스트)나 해결하려는 문제의 성격(예: 분류, 회귀)을 알려주시면, Adam 옵티마이저의 학습률(Learning Rate)을 어떻게 설정하는 것이 좋은지 더 자세히 추천해 드릴 수 있습니다. 어떻게 도와드릴까요?
+
+[1] [https://csshark.tistory.com](https://csshark.tistory.com/133)
+[2] [https://toramko.tistory.com](https://toramko.tistory.com/entry/tensorflow-%ED%85%90%EC%84%9C%ED%94%8C%EB%A1%9C%EC%9A%B0-Optimizer-%EA%B0%9C%EB%85%90-%EB%B0%8F-%EC%BD%94%EB%93%9C-%EC%97%85%EA%B7%B8%EB%A0%88%EC%9D%B4%EB%93%9C-v1-v2-%EC%BD%94%EB%93%9C-%EC%97%85%EA%B7%B8%EB%A0%88%EC%9D%B4%EB%93%9C-6)
+[3] [https://www.tensorflow.org](https://www.tensorflow.org/guide/effective_tf2?hl=ko)
+[4] [https://codingapple.com](https://codingapple.com/forums/topic/%ED%85%90%EC%84%9C%ED%94%8C%EB%A1%9C-%EC%97%90%EB%9F%AC/)
+[5] [https://velog.io](https://velog.io/@ksolar03/%EB%94%A5%EB%9F%AC%EB%8B%9D-tf.keras-%EC%A3%BC%EC%9A%94-%EB%AA%A8%EB%93%88-%EC%A0%95%EB%A6%AC)
+[6] [https://blog.naver.com](https://blog.naver.com/PostView.naver?blogId=tjdrud1323&logNo=221819574416)
+[7] [https://wikidocs.net](https://wikidocs.net/36033)
+[8] [https://limjun92.github.io](https://limjun92.github.io/assets/TensorFlow%202.0%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC/7.%20%ED%85%8D%EC%8A%A4%ED%8A%B8/%5B%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC2%5D%20%EC%88%9C%ED%99%98%20%EC%8B%A0%EA%B2%BD%EB%A7%9D%EC%9D%84%20%ED%99%9C%EC%9A%A9%ED%95%9C%20%ED%85%8D%EC%8A%A4%ED%8A%B8%20%EC%83%9D%EC%84%B1/)
