@@ -1,0 +1,60 @@
+파이썬으로 퍼셉트론 알고리즘을 활용해 AND 논리 회로를 학습하고 예측하는 예제입니다.
+가장 직관적인 이해를 위해 외부 라이브러리(Scikit-learn 등)를 쓰지 않고, 순수 파이썬(Pure Python) 코드로 퍼셉트론의 동작 원리를 구현했습니다.
+------------------------------
+## 🐍 파이썬 퍼셉트론 구현 코드
+
+class Perceptron:
+    def __init__(self, input_size, lr=0.1, epochs=10):
+        # 가중치(w)와 편향(b)을 0으로 초기화합니다.
+        self.weights = [0.0] * input_size
+        self.bias = 0.0
+        self.lr = lr          # 학습률 (Learning Rate)
+        self.epochs = epochs  # 전체 데이터 반복 학습 횟수
+
+    # 활성화 함수: 단계 함수 (Step Function)
+    def activation(self, x):
+        return 1 if x >= 0 else 0
+
+    # 예측 함수: 뉴런의 출력을 계산 (w1*x1 + w2*x2 + ... + b)
+    def predict(self, inputs):
+        linear_combination = sum(w * x for w, x in zip(self.weights, inputs)) + self.bias
+        return self.activation(linear_combination)
+
+    # 학습 함수: 오차를 바탕으로 가중치와 편향을 업데이트
+    def train(self, training_inputs, labels):
+        for epoch in range(self.epochs):
+            for inputs, label in zip(training_inputs, labels):
+                prediction = self.predict(inputs)
+                error = label - prediction
+                
+                # 오차가 발생하면 가중치와 편향을 수정합니다.
+                if error != 0:
+                    self.weights = [w + self.lr * error * x for w, x in zip(self.weights, inputs)]
+                    self.bias += self.lr * error
+
+# 1. AND 회로 학습 데이터 세트 구성 (입력값 X, 결과값 Y)# AND 연산은 두 입력이 모두 1일 때만 결과가 1이 됩니다.X = [,
+ ,
+ ,
+    [1, 1]
+]y = [0, 0, 0, 1]
+# 2. 퍼셉트론 객체 생성 및 학습 진행perceptron = Perceptron(input_size=2, lr=0.1, epochs=10)
+perceptron.train(X, y)
+# 3. 학습된 퍼셉트론 결과 확인
+print("--- AND 회로 퍼셉트론 예측 결과 ---")for inputs in X:
+    pred = perceptron.predict(inputs)
+    print(f"입력: {inputs} -> 예측 결과: {pred}")
+
+print("\n--- 학습된 파라미터 ---")
+print(f"최종 가중치(Weights): {perceptron.weights}")
+print(f"최종 편향(Bias): {perceptron.bias}")
+
+------------------------------
+## 💡 코드 동작 가이드
+
+   1. 학습 과정: perceptron.train() 함수가 실행되면서 데이터(X)를 넣고 예측값과 실제 정답(y)을 비교합니다. 예측이 틀리면(오차가 생기면) 가중치와 편향을 조금씩 고쳐나갑니다.
+   2. 선형 분리 경계 구축: 10번의 반복(epochs)을 거치고 나면, 퍼셉트론은 [0, 0], [0, 1], [1, 0]과 [1, 1]을 완벽하게 갈라놓는 직선의 기울기(가중치)와 절편(편향)을 스스로 찾아냅니다.
+
+------------------------------
+이 예제는 아주 기초적인 퍼셉트론입니다. 만약 현업이나 실제 프로젝트에서 활용하는 방식을 원하신다면, 머신러닝 라이브러리인 Scikit-learn의 Perceptron 모듈을 사용하는 방법을 보여드릴 수 있습니다. 아니면 퍼셉트론이 해결하지 못하는 XOR 문제를 푸는 다층 퍼셉트론(MLP) 예제로 넘어가 볼까요?
+
+
