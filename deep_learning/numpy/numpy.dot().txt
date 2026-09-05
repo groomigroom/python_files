@@ -1,0 +1,44 @@
+2차원 배열에서 행렬 곱셈(Matrix Multiplication)은 앞 행렬의 '행(Row)'과 뒤 행렬의 '열(Column)'을 순서대로 상호 곱한 뒤 모두 더하는 방식으로 계산합니다.
+이 방식을 수학에서는 재적(Inner Product)의 연속으로 보며, 코딩과 수학에서 가장 자주 쓰이는 행렬 연산입니다.
+------------------------------
+## 📐 핵심 규칙: 크기(Shape) 맞추기
+행렬 곱셈을 하려면 첫 번째 행렬의 열 개수와 두 번째 행렬의 행 개수가 반드시 같아야 합니다.
+
+* 행렬 $A$의 크기가 $(M \times N)$이고, 행렬 $B$의 크기가 $(N \times K)$라면?
+* 가운데 숫자인 $N$이 일치해야만 곱셈이 가능합니다.
+* 계산 결과로 나오는 행렬 $C$의 크기는 양 끝 숫자를 딴 $(M \times K)$가 됩니다.
+
+------------------------------
+## 🧮 구체적인 계산 과정 (예시)
+두 행렬 $A$와 $B$가 다음과 같다고 가정해 보겠습니다.
+$$A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}, \quad B = \begin{pmatrix} 5 & 6 \\ 7 & 8 \end{pmatrix}$$ 
+결과 행렬 $C = A \times B$의 각 원소 $(크기: 2 \times 2)$는 아래와 같이 계산됩니다.
+
+* $C$의 1행 1열 원소 = ($A$의 1행) $\cdot$ ($B$의 1열)
+$$\begin{pmatrix} \mathbf{1} & \mathbf{2} \end{pmatrix} \cdot \begin{pmatrix} \mathbf{5} \\ \mathbf{7} \end{pmatrix} = (1 \times 5) + (2 \times 7) = 5 + 14 = \mathbf{19}$$ 
+* $C$의 1행 2열 원소 = ($A$의 1행) $\cdot$ ($B$의 2열)
+$$\begin{pmatrix} \mathbf{1} & \mathbf{2} \end{pmatrix} \cdot \begin{pmatrix} \mathbf{6} \\ \mathbf{8} \end{pmatrix} = (1 \times 6) + (2 \times 8) = 6 + 16 = \mathbf{22}$$ 
+* $C$의 2행 1열 원소 = ($A$의 2행) $\cdot$ ($B$의 1열)
+$$\begin{pmatrix} \mathbf{3} & \mathbf{4} \end{pmatrix} \cdot \begin{pmatrix} \mathbf{5} \\ \mathbf{7} \end{pmatrix} = (3 \times 5) + (4 \times 7) = 15 + 28 = \mathbf{43}$$ 
+* $C$의 2행 2열 원소 = ($A$의 2행) $\cdot$ ($B$의 2열)
+$$\begin{pmatrix} \mathbf{3} & \mathbf{4} \end{pmatrix} \cdot \begin{pmatrix} \mathbf{6} \\ \mathbf{8} \end{pmatrix} = (3 \times 6) + (4 \times 8) = 18 + 32 = \mathbf{50}$$ 
+
+## 최종 결과 행렬
+$$C = \begin{pmatrix} 19 & 22 \\ 43 & 50 \end{pmatrix}$$ 
+------------------------------
+## 💻 NumPy 코드로 확인하기
+이 계산을 파이썬 코드로 구현하면 다음과 같습니다. np.dot()이나 @ 연산자 모두 동일한 결과를 냅니다.
+
+import numpy as np
+A = np.array([[1, 2], 
+              [3, 4]])
+B = np.array([[5, 6], 
+              [7, 8]])
+# 두 방식 모두 결과는 동일합니다.
+print(np.dot(A, B))# 또는
+print(A @ B)
+# 출력 결과:# [[19 22]#  [43 50]]
+
+------------------------------
+이해가 안 가거나 더 복잡한 크기(예: $2 \times 3$ 행렬과 $3 \times 2$ 행렬)의 계산 예시가 필요하시면 편하게 말씀해 주세요. 어떤 행렬 크기로 연습해 볼까요?
+
