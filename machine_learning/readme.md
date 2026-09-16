@@ -1,6 +1,6 @@
-# https://wikidocs.net/31766
+# https://wikidocs.net/22650
 
-* 2다시9 부터
+* 4`2 부터
 
 * 
 * 부터보기
