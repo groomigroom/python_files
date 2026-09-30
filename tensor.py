@@ -19,3 +19,15 @@ rank_1_tensor
 
 
 #------------------------------------
+
+rank_2_tensor = tf.constant([[1, 2], [3, 4], [5, 6]], dtype=tf.float16)
+rank_2_tensor
+"""
+<tf.Tensor: shape=(3, 2), dtype=float16, numpy=
+array([[1., 2.],
+       [3., 4.],
+       [5., 6.]], dtype=float16)>
+       """
+
+
+#------------------------------------
