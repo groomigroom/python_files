@@ -174,4 +174,9 @@ c = tf.constant([[4.0, 5.0], [10.0, 1.0]])
 # Find the index of the largest value
 print(tf.math.argmax(c))
 
+"""
 
+tf.Tensor([1 0], shape=(2,), dtype=int64)
+"""
+
+#-----------
