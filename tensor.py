@@ -157,3 +157,10 @@ TensorFlow의 tf.reduce_max는 텐서(Tensor)의 차원을 줄이면서 지정�
 """
 
 
+c = tf.constant([[4.0, 5.0], [10.0, 1.0]])
+
+# Find the largest value
+print(tf.reduce_max(c))
+
+
+
