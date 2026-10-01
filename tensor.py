@@ -166,3 +166,12 @@ print(tf.reduce_max(c))
 """
 tf.Tensor(10.0, shape=(), dtype=float32)
 """
+
+#---------
+
+c = tf.constant([[4.0, 5.0], [10.0, 1.0]])
+
+# Find the index of the largest value
+print(tf.math.argmax(c))
+
+
