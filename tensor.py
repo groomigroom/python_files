@@ -126,3 +126,25 @@ tf.Tensor(
 """
 
 #------------------------------------
+
+a = tf.constant([[1, 2],
+                 [3, 4]])
+b = tf.constant([[1, 1],
+                 [1, 1]])
+print(a + b, "\n") # element-wise addition
+print(a * b, "\n") # element-wise multiplication
+print(a @ b, "\n") # matrix multiplication
+
+"""
+tf.Tensor(
+[[2 3]
+ [4 5]], shape=(2, 2), dtype=int32) 
+
+tf.Tensor(
+[[1 2]
+ [3 4]], shape=(2, 2), dtype=int32) 
+
+tf.Tensor(
+[[3 3]
+ [7 7]], shape=(2, 2), dtype=int32) 
+"""
