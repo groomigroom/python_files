@@ -295,3 +295,8 @@ tf.reduce_max([1,2,3])
 #<tf.Tensor: shape=(), dtype=int32, numpy=3> -> 최대값 tensor로 반환
 
 #------------
+
+tf.reduce_max(np.array([1,2,3]))
+#<tf.Tensor: shape=(), dtype=int64, numpy=3> -> 최대값 tensor로 반환
+
+#------------
