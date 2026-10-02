@@ -283,3 +283,11 @@ $$\text{Softmax}(x_i) = \frac{e^{x_i}}{\sum e^{x}}$$
 """
 
 #------------
+
+
+tf.convert_to_tensor([1,2,3])
+#<tf.Tensor: shape=(3,), dtype=int32, numpy=array([1, 2, 3], dtype=int32)>
+
+
+#------------
+
