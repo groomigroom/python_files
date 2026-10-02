@@ -291,3 +291,7 @@ tf.convert_to_tensor([1,2,3])
 
 #------------
 
+tf.reduce_max([1,2,3])
+#<tf.Tensor: shape=(), dtype=int32, numpy=3> -> 최대값 tensor로 반환
+
+#------------
