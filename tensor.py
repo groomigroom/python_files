@@ -369,10 +369,15 @@ print("Elements along axis 0 of tensor:", rank_4_tensor.shape[0])
 
 #-------------------------------------
 
-
+rank_4_tensor = tf.zeros([3, 2, 4, 5])
+print("Elements along the last axis of tensor:", rank_4_tensor.shape[-1])
+#Elements along the last axis of tensor: 5
 
 #-------------------------------------
 
+
+
+#-------------------------------------
 
 
 
