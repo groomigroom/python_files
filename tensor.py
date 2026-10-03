@@ -409,8 +409,29 @@ Last: 34
 
 #-------------------------------------
 
+rank_1_tensor = tf.constant([0, 1, 1, 2, 3, 5, 8, 13, 21, 34])
+print("Everything:", rank_1_tensor[:].numpy())
+print("Before 4:", rank_1_tensor[:4].numpy())
+print("From 4 to the end:", rank_1_tensor[4:].numpy())
+print("From 2, before 7:", rank_1_tensor[2:7].numpy())
+print("Every other item:", rank_1_tensor[::2].numpy())
+print("Reversed:", rank_1_tensor[::-1].numpy())
+"""
+Everything: [ 0  1  1  2  3  5  8 13 21 34]
+Before 4: [0 1 1 2]
+From 4 to the end: [ 3  5  8 13 21 34]
+From 2, before 7: [1 2 3 5 8]
+Every other item: [ 0  1  3  8 21]
+Reversed: [34 21 13  8  5  3  2  1  1  0]
+"""
+
 
 #-------------------------------------
+
+
+
+#-------------------------------------
+
 
 
 인덱싱
