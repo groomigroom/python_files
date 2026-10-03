@@ -356,6 +356,13 @@ print("Number of axes:", rank_4_tensor.ndim)
 
 #-------------------------------------
 
+rank_4_tensor = tf.zeros([3, 2, 4, 5])
+print("Shape of tensor:", rank_4_tensor.shape)
+#Shape of tensor: (3, 2, 4, 5)
+
+
+#-------------------------------------
+
 
 
 #-------------------------------------
