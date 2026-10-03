@@ -375,11 +375,16 @@ print("Elements along the last axis of tensor:", rank_4_tensor.shape[-1])
 
 #-------------------------------------
 
-
+rank_4_tensor = tf.zeros([3, 2, 4, 5])
+print("Total number of elements (3*2*4*5): ", tf.size(rank_4_tensor).numpy())
+#Total number of elements (3*2*4*5):  120
 
 #-------------------------------------
 
 
 
+
+
+#-------------------------------------
 
 
