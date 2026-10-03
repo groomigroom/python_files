@@ -389,8 +389,14 @@ tf.rank(rank_4_tensor)
 
 #-------------------------------------
 
+rank_4_tensor = tf.zeros([3, 2, 4, 5])
+tf.shape(rank_4_tensor)
+#<tf.Tensor: shape=(4,), dtype=int32, numpy=array([3, 2, 4, 5], dtype=int32)>
+
+#-------------------------------------
 
 
 #-------------------------------------
+
 
 
