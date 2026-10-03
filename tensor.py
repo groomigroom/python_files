@@ -395,6 +395,20 @@ tf.shape(rank_4_tensor)
 
 #-------------------------------------
 
+rank_1_tensor = tf.constant([0, 1, 1, 2, 3, 5, 8, 13, 21, 34])
+print(rank_1_tensor.numpy())
+#[ 0  1  1  2  3  5  8 13 21 34]
+print("First:", rank_1_tensor[0].numpy())
+print("Second:", rank_1_tensor[1].numpy())
+print("Last:", rank_1_tensor[-1].numpy())
+"""
+First: 0
+Second: 1
+Last: 34
+"""
+
+#-------------------------------------
+
 
 #-------------------------------------
 
