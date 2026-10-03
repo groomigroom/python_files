@@ -399,4 +399,5 @@ tf.shape(rank_4_tensor)
 #-------------------------------------
 
 
-
+인덱싱
+https://www.tensorflow.org/guide/tensor?hl=ko
