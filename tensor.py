@@ -440,7 +440,25 @@ print(rank_2_tensor.numpy())
 
 #-------------------------------------
 
-
+rank_2_tensor = tf.constant([[1, 2], [3, 4], [5, 6]], dtype=tf.float16)
+print(rank_2_tensor[1, 1].numpy())
+#4.0
+print("Second row:", rank_2_tensor[1, :].numpy())
+print("Second column:", rank_2_tensor[:, 1].numpy())
+print("Last row:", rank_2_tensor[-1, :].numpy())
+print("First item in last column:", rank_2_tensor[0, -1].numpy())
+print("Skip the first row:")
+print(rank_2_tensor[1:, :].numpy(), "\n")
+"""
+4.0
+Second row: [3. 4.]
+Second column: [2. 4. 6.]
+Last row: [5. 6.]
+First item in last column: 2.0
+Skip the first row:
+[[3. 4.]
+ [5. 6.]] 
+"""
 
 
 
@@ -448,6 +466,8 @@ print(rank_2_tensor.numpy())
 
 
 
+
+#-------------------------------------
 
 
 인덱싱
