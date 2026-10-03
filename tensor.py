@@ -340,3 +340,15 @@ array([[[[0., 0., 0., 0., 0.],
          """
 
 #-------------------------------------
+
+
+rank_4_tensor = tf.zeros([3, 2, 4, 5])
+print("Type of every element:", rank_4_tensor.dtype)
+#Type of every element: <dtype: 'float32'>
+
+#-------------------------------------
+
+
+
+
+#-------------------------------------
