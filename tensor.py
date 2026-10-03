@@ -363,9 +363,17 @@ print("Shape of tensor:", rank_4_tensor.shape)
 
 #-------------------------------------
 
+rank_4_tensor = tf.zeros([3, 2, 4, 5])
+print("Elements along axis 0 of tensor:", rank_4_tensor.shape[0])
+#Elements along axis 0 of tensor: 3
+
+#-------------------------------------
+
 
 
 #-------------------------------------
+
+
 
 
 
