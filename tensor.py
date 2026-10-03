@@ -489,10 +489,19 @@ print(x.shape.as_list())
 
 #-------------------------------------
 
+x = tf.constant([[1], [2], [3]])
+reshaped = tf.reshape(x, [1, 3])
+reshaped
+#<tf.Tensor: shape=(1, 3), dtype=int32, numpy=array([[1, 2, 3]], dtype=int32)>
+
+
+#-------------------------------------
+
 
 
 
 #-------------------------------------
+
 
 
 
