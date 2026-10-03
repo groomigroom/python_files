@@ -348,7 +348,18 @@ print("Type of every element:", rank_4_tensor.dtype)
 
 #-------------------------------------
 
+rank_4_tensor = tf.zeros([3, 2, 4, 5])
+print("Number of axes:", rank_4_tensor.ndim)
+#Number of axes: 4
+#차원의 개수를 의미 
+
+
+#-------------------------------------
 
 
 
 #-------------------------------------
+
+
+
+
