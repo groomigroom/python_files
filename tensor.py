@@ -381,7 +381,13 @@ print("Total number of elements (3*2*4*5): ", tf.size(rank_4_tensor).numpy())
 
 #-------------------------------------
 
+rank_4_tensor = tf.zeros([3, 2, 4, 5])
+tf.rank(rank_4_tensor)
+#<tf.Tensor: shape=(), dtype=int32, numpy=4>
 
+
+
+#-------------------------------------
 
 
 
