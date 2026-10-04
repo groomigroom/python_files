@@ -584,10 +584,27 @@ print(the_u8_tensor)
 
 #-------------------------------------
 
+x = tf.constant([1, 2, 3])
+
+y = tf.constant(2)
+z = tf.constant([2, 2, 2])
+# All of these are the same computation
+print(tf.multiply(x, 2))
+print(x * y)
+print(x * z)
+"""
+tf.Tensor([2 4 6], shape=(3,), dtype=int32)
+tf.Tensor([2 4 6], shape=(3,), dtype=int32)
+tf.Tensor([2 4 6], shape=(3,), dtype=int32)
+"""
+
+
+#-------------------------------------
 
 
 
 #-------------------------------------
+
 
 
 
