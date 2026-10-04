@@ -643,6 +643,6 @@ tf.Tensor(
 
 
 
-데이터의 레이아웃은 메모리에서 유지되고 요청된 형상이 같은 데이터를 가리키는 새 텐서가 작성됩니다. TensorFlow는 C 스타일 "행 중심" 메모리 순서를 사용합니다. 여기에서 가장 오른쪽에 있는 인덱스를 증가시키면 메모리의 단일 단계에 해당합니다.
+어떤 축을 따라 다양한 수의 요소를 가진 텐서를 "비정형(ragged)"이라고 합니다. 비정형 데이터에는 tf.ragged.RaggedTensor를 사용합니다.
 부터 보기
 https://www.tensorflow.org/guide/tensor?hl=ko
