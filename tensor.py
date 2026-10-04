@@ -575,9 +575,21 @@ except Exception as e:
 
 #-------------------------------------
 
+the_f64_tensor = tf.constant([2.2, 3.3, 4.4], dtype=tf.float64)
+the_f16_tensor = tf.cast(the_f64_tensor, dtype=tf.float16)
+# Now, cast to an uint8 and lose the decimal precision
+the_u8_tensor = tf.cast(the_f16_tensor, dtype=tf.uint8)
+print(the_u8_tensor)
+#tf.Tensor([2 3 4], shape=(3,), dtype=uint8)
+
+#-------------------------------------
+
+
 
 
 #-------------------------------------
+
+
 
 데이터의 레이아웃은 메모리에서 유지되고 요청된 형상이 같은 데이터를 가리키는 새 텐서가 작성됩니다. TensorFlow는 C 스타일 "행 중심" 메모리 순서를 사용합니다. 여기에서 가장 오른쪽에 있는 인덱스를 증가시키면 메모리의 단일 단계에 해당합니다.
 부터 보기
