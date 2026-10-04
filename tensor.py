@@ -559,6 +559,21 @@ tf.Tensor(
 
 #-------------------------------------
 
+rank_3_tensor = tf.constant([
+  [[0, 1, 2, 3, 4],
+   [5, 6, 7, 8, 9]],
+  [[10, 11, 12, 13, 14],
+   [15, 16, 17, 18, 19]],
+  [[20, 21, 22, 23, 24],
+   [25, 26, 27, 28, 29]],])
+try:
+  tf.reshape(rank_3_tensor, [7, -1])
+except Exception as e:
+  print(f"{type(e).__name__}: {e}")
+  #InvalidArgumentError: {{function_node __wrapped__Reshape_device_/job:localhost/replica:0/task:0/device:CPU:0}} Input to reshape is a tensor with 30 values, but the requested shape requires a multiple of 7 [Op:Reshape]
+
+
+#-------------------------------------
 
 
 
