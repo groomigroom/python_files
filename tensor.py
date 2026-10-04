@@ -601,10 +601,35 @@ tf.Tensor([2 4 6], shape=(3,), dtype=int32)
 
 #-------------------------------------
 
+x = tf.constant([1, 2, 3])
 
+y = tf.constant(2)
+z = tf.constant([2, 2, 2])
+# These are the same computations
+x = tf.reshape(x,[3,1])
+y = tf.range(1, 5)
+print(x, "\n")
+print(y, "\n")
+print(tf.multiply(x, y))
+"""
+tf.Tensor(
+[[1]
+ [2]
+ [3]], shape=(3, 1), dtype=int32) 
+
+tf.Tensor([1 2 3 4], shape=(4,), dtype=int32) 
+
+tf.Tensor(
+[[ 1  2  3  4]
+ [ 2  4  6  8]
+ [ 3  6  9 12]], shape=(3, 4), dtype=int32)
+ """
 
 #-------------------------------------
 
+
+
+#-------------------------------------
 
 
 
